@@ -32,7 +32,7 @@ jQuery.noConflict();
 				var header_w = $('header .inner').width();
 				var elements_w = menu.width() + $('.brand').width();
 
-				if ((header_w < elements_w) || ($(window).width() <= 768)) {
+				if ($(window).width() <= 750) {
 					$('body').addClass('tablet-nav');
 				}
 				else {

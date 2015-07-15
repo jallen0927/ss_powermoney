@@ -1,13 +1,10 @@
 <header class="header" role="banner">
-	<div class="inner">
-		<div class="unit size4of4 lastUnit">
-			<a href="$BaseHref" class="brand" rel="home">
-				<h1>$SiteConfig.Title</h1>
-				<% if $SiteConfig.Tagline %>
-				<p>$SiteConfig.Tagline</p>
-				<% end_if %>
-			</a>
-			<% include Navigation %>
-		</div>
-	</div>
+    <div class="nav-row">
+        <div class="container">
+            <% include Navigation %>
+            <a href="$BaseHref" class="brand col-xs-8" rel="home">
+                <img class="img-responsive" src="themes/simple/images/logo.png">
+            </a>
+        </div>
+    </div>
 </header>
