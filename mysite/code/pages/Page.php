@@ -1,4 +1,5 @@
 <?php
+
 class Page extends SiteTree {
 
 	private static $db = array(
@@ -8,6 +9,7 @@ class Page extends SiteTree {
 	);
 
 }
+
 class Page_Controller extends ContentController {
 
 	/**
@@ -32,6 +34,17 @@ class Page_Controller extends ContentController {
 		parent::init();
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements
+
+        Requirements::css(BOWER_PATH . '/bootstrap/dist/css/bootstrap.min.css');
+        Requirements::css('http://fonts.googleapis.com/css?family=Raleway');
+        Requirements::css(BOWER_PATH . '/fancybox/source/jquery.fancybox.css');
+		Requirements::css(CSS_DIR . '/customise.css');
+
+        Requirements::javascript(BOWER_PATH . '/jquery/dist/jquery.min.js');
+        Requirements::javascript(BOWER_PATH . '/bootstrap/dist/js/bootstrap.min.js');
+        Requirements::javascript(BOWER_PATH . '/fancybox/source/jquery.fancybox.pack.js');
+
+        Requirements::javascript(JS_DIR . '/customise.js');
 	}
 
 }

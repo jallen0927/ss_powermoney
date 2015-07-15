@@ -1,5 +1,7 @@
 .idea
 .swp
 .swo
+*.css.map
 assets
 _ss_environment.php
+bower_components

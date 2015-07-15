@@ -18,7 +18,7 @@ jQuery.noConflict();
 			  }
 		});
 
-		if (!$.browser.msie || ($.browser.msie && (parseInt($.browser.version, 10) > 8))) {
+		//if (!$.browser.msie || ($.browser.msie && (parseInt($.browser.version, 10) > 8))) {
 			var searchBarButton = $("span.search-dropdown-icon");
 			var searchBar = $('div.search-bar');
 			var menuButton = $("span.nav-open-button");
@@ -82,6 +82,6 @@ jQuery.noConflict();
 				searchBar.slideUp();
 				menu.slideToggle(200);
 			});
-		}
+		//}
 	});
 }(jQuery));
