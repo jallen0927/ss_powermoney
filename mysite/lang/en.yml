@@ -1,4 +1,14 @@
 en:
+  Common:
+    Menu:
+      AboutPage: About Us
+      BlogsPage: News
+      ProductsPage: Products
+      ContactPage: Contact Us
   Home:
-    NewsTitle: "LATEST NEWS"
+    NewsTitle: LATEST NEWS
+    Address: Please input your address
+    PowerAmount: Your monthly power consumption
+    GasAmount: Your monthly gas consumption
+    Submit: Check
 

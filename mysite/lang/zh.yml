@@ -1,3 +1,14 @@
 zh:
+  Common:
+    Menu:
+      AboutPage: 关于我们
+      BlogsPage: 信息站
+      ProductsPage: 硬件产品
+      ContactPage: 联系我们
+
   Home:
-    NewsTitle: "最新消息"
+    NewsTitle: 最新消息
+    Address: 这里输入您的地址
+    PowerAmount: 您的每月平均用电量
+    GasAmount: 您的每月平均天然气用量
+    Submit: 查看价格

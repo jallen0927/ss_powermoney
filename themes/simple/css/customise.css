@@ -59,6 +59,9 @@ header {
 
 .HomePage .content {
   margin-top: 50px; }
+  .HomePage .content .gas-form {
+    display: none;
+    visibility: hidden; }
 
 footer {
   color: #ffffff; }

@@ -87,6 +87,15 @@ header {
 .HomePage {
   .content {
     margin-top: 50px;
+
+    .home-form {
+
+    }
+
+    .gas-form {
+      display: none;
+      visibility: hidden;
+    }
   }
 }
 

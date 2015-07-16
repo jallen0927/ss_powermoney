@@ -3,5 +3,7 @@
  */
 
 ;(function($){
+    var $powerForm = $('.power-form'),
+        $gasForm = $('.gas-form');
 
 }(jQuery));
