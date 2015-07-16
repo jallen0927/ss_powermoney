@@ -28,10 +28,63 @@ class Page_Controller extends ContentController {
 	 * @var array
 	 */
 	private static $allowed_actions = array (
+        'setLanguage'
 	);
+
+    private static $url_handlers = array(
+        'lang/$language' => 'setLanguage'
+    );
+
+    /**
+     * @var array
+     * Array containing all allowed languages
+     */
+    private static $allowed_languages = array(
+        'en' => array(
+            'code' => 'en',
+            'title' => 'English',
+            'locale' => 'en_US'
+        ),
+        'cn' => array(
+            'code' => 'cn',
+            'title' => '中文',
+            'locale' => 'zh_CN'
+        )
+    );
+
+    /**
+     * @param HttpRequest $request
+     * @return mixed
+     * Function is to set language.
+     * Default 'en_US'
+     */
+    public function setLanguage(HttpRequest $request) {
+
+        $language = $request->param('language');
+
+        if (array_key_exists($language, self::$allowed_languages)) {
+            Session::set('language', self::$allowed_languages[$language]['locale']);
+        } else {
+            Session::set('language', 'en_US');
+        }
+
+        return $this->redirectBack();
+    }
+
+    /**
+     * @return mixed
+     * Get available languages
+     */
+    public function getLanguages() {
+
+        $languages = ArrayList::create(self::$allowed_languages);
+        return $languages;
+    }
 
 	public function init() {
 		parent::init();
+
+        i18n::set_locale(Session::get('language'));
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements
 

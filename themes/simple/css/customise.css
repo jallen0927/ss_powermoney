@@ -5,6 +5,7 @@ html {
 
 body {
   width: 100%;
+  font-family: "Raleway", "Times New Roman", Times, serif;
   background-image: url("/themes/simple/images/main-bg.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -17,8 +18,21 @@ body {
 .no-padding {
   padding: 0 !important; }
 
+.primary-font {
+  color: #2C78AF; }
+
+.secondary-font {
+  color: #FFC110; }
+
 .main {
   min-height: 500px; }
+
+.block {
+  background-color: #FEFEFE;
+  min-height: 300px;
+  border-top: 5px solid #FFC110;
+  border-bottom: 5px solid #FFC110;
+  padding: 20px 30px; }
 
 header {
   min-height: 120px; }
@@ -43,11 +57,24 @@ header {
     header .link a {
       color: #2C78AF !important; }
 
-footer .social {
-  background-color: #2C78AF; }
-footer .information {
-  background-color: #747374; }
-footer .copyright {
-  background-color: #2D2D2D; }
+.HomePage .content {
+  margin-top: 50px; }
+
+footer {
+  color: #ffffff; }
+  footer .social {
+    background-color: #2C78AF; }
+    footer .social ul li {
+      list-style: none;
+      display: block;
+      float: left;
+      margin: 0px 20px; }
+      footer .social ul li a {
+        text-decoration: none;
+        color: #ffffff; }
+  footer .information {
+    background-color: #747374; }
+  footer .copyright {
+    background-color: #2D2D2D; }
 
 /*# sourceMappingURL=customise.css.map */

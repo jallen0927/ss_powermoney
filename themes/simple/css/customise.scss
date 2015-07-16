@@ -1,5 +1,5 @@
 $primary-color: #2C78AF;
-$active-color: #FFC110;
+$secondary-color: #FFC110;
 
 html {
   width: 100%;
@@ -9,6 +9,7 @@ html {
 
 body {
   width: 100%;
+  font-family: "Raleway", "Times New Roman", Times, serif;
   background-image: url("/themes/simple/images/main-bg.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -23,8 +24,24 @@ body {
   padding: 0 !important;
 }
 
+.primary-font {
+  color: $primary-color;
+}
+
+.secondary-font {
+  color: $secondary-color;
+}
+
 .main {
   min-height: 500px;
+}
+
+.block {
+  background-color: #FEFEFE;
+  min-height: 300px;
+  border-top: 5px solid $secondary-color;
+  border-bottom: 5px solid $secondary-color;
+  padding: 20px 30px;
 }
 
 header {
@@ -54,7 +71,7 @@ header {
     text-align: right;
 
     a {
-      color: $active-color !important;
+      color: $secondary-color !important;
     }
   }
 
@@ -67,10 +84,29 @@ header {
   }
 }
 
+.HomePage {
+  .content {
+    margin-top: 50px;
+  }
+}
+
 footer {
+  color: #ffffff;
 
   .social {
     background-color: #2C78AF;
+    ul {
+      li {
+        list-style: none;
+        display: block;
+        float: left;
+        margin: 0px 20px;
+        a {
+          text-decoration: none;
+          color: #ffffff;
+        }
+      }
+    }
   }
 
   .information {
