@@ -59,9 +59,19 @@ header {
 
 .HomePage .content {
   margin-top: 50px; }
-  .HomePage .content .gas-form {
-    display: none;
-    visibility: hidden; }
+  .HomePage .content .calc-form .field {
+    margin-bottom: 10px; }
+  .HomePage .content .calc-form input.checkbox {
+    margin-left: 0; }
+  .HomePage .content .calc-form .middleColumn input {
+    width: 100%; }
+  .HomePage .content .calc-form .Actions {
+    float: right;
+    margin-top: 10px; }
+    .HomePage .content .calc-form .Actions .action {
+      background-color: #FFC110;
+      border: 1px solid #2C78AF;
+      border-radius: 5px; }
 
 footer {
   color: #ffffff; }

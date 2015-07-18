@@ -88,14 +88,31 @@ header {
   .content {
     margin-top: 50px;
 
-    .home-form {
+    .calc-form {
+      .field {
+        margin-bottom: 10px;
+      }
+      input.checkbox {
+        margin-left: 0;
+      }
+      .middleColumn {
+        input {
+          width: 100%;
+        }
+      }
 
+      .Actions {
+        float: right;
+        margin-top: 10px;
+
+        .action {
+          background-color: $secondary-color;
+          border: 1px solid $primary-color;
+          border-radius: 5px;
+        }
+      }
     }
 
-    .gas-form {
-      display: none;
-      visibility: hidden;
-    }
   }
 }
 

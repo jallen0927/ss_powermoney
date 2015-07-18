@@ -9,6 +9,7 @@ en:
     NewsTitle: LATEST NEWS
     Address: Please input your address
     PowerAmount: Your monthly power consumption
+    WithGas: Also want to check gas plan?
     GasAmount: Your monthly gas consumption
-    Submit: Check
+    Submit: Check >
 

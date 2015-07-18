@@ -23,43 +23,34 @@ class HomePage_Controller extends Page_Controller {
      * @return mixed
      * Calculate power form
      */
-    public function PowerForm() {
-
-        $fields = new FieldList(
-            $addressField = TextField::create('Address', _t('Home.Address', 'Please input your address')),
-            $powerField = TextField::create('PowerAmount', _t('Home.PowerAmount', 'Your monthly power consumption'))
-        );
-
-        $addressField->addExtraClass('form-group');
-        $powerField->addExtraClass('form-group');
-
-        $actions = new FieldList(
-            $submitField = FormAction::create('submitPower', _t('Home.Submit', 'Submit'))
-        );
-
-        $form = Form::create($this, __FUNCTION__, $fields, $actions);
-
-        return $form;
-    }
-
-    /**
-     * @return mixed
-     * Calculate gas form
-     */
-    public function GasForm() {
+    public function CalcForm() {
 
         $fields = new FieldList(
             $addressField = TextField::create('Address', _t('Home.Address', 'Please input your address')),
             $powerField = TextField::create('PowerAmount', _t('Home.PowerAmount', 'Your monthly power consumption')),
+            $withGasField = CheckboxField::create('WithGas', _t('Home.WithGas', 'Also want to check gas plan?')),
             $gasField = TextField::create('GasAmount', _t('Home.GasAmount', 'Your monthly gas consumption'))
         );
 
         $actions = new FieldList(
-            $submitField = FormAction::create('submitGas', _t('Home.Submit', 'Submit'))
+            $submitField = FormAction::create('Calculate', _t('Home.Submit', 'Submit'))
         );
 
-        $form = Form::create($this, __FUNCTION__, $fields, $actions);
+        $validator = new RequiredFields('Address', 'PowerAmount');
+
+        $form = Form::create($this, __FUNCTION__, $fields, $actions, $validator);
 
         return $form;
+    }
+
+
+    public function Calculate($form, $data) {
+
+    }
+
+    public function getSuburbs() {
+        $suburbs = array();
+
+        return $suburbs;
     }
 }

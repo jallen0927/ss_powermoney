@@ -10,5 +10,6 @@ zh:
     NewsTitle: 最新消息
     Address: 这里输入您的地址
     PowerAmount: 您的每月平均用电量
+    WithGas: 同时计算天然气
     GasAmount: 您的每月平均天然气用量
-    Submit: 查看价格
+    Submit: 查看价格 >
