@@ -20,6 +20,11 @@ class PowerPlan extends DataObject {
         'Special_cn' => 'Text'
     );
 
+    private static $summary_fields = array(
+        'Name' => 'Name',
+        'Area.Name' => 'Area'
+    );
+
     private static $has_one = array(
         'Area' => 'Area',
         'Company' => 'Company'

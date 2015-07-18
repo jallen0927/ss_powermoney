@@ -74,6 +74,7 @@ class Page_Controller extends ContentController {
         Requirements::javascript(BOWER_PATH . '/jquery/dist/jquery.min.js');
         Requirements::javascript(BOWER_PATH . '/bootstrap/dist/js/bootstrap.min.js');
         Requirements::javascript(BOWER_PATH . '/fancybox/source/jquery.fancybox.pack.js');
+        Requirements::javascript("https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places");
 
         Requirements::javascript(JS_DIR . '/customise.js');
 	}

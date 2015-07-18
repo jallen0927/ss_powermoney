@@ -14,6 +14,7 @@ class Area extends DataObject {
     );
 
     private static $has_many = array(
-        'PowerPlans' => 'PowerPlan'
+        'PowerPlans' => 'PowerPlan',
+        'Suburbs' => 'Suburb'
     );
 }

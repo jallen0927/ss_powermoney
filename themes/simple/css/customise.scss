@@ -89,6 +89,11 @@ header {
     margin-top: 50px;
 
     .calc-form {
+
+      .field#GasAmount {
+        display: none;
+      }
+
       .field {
         margin-bottom: 10px;
       }

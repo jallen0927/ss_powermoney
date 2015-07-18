@@ -59,6 +59,8 @@ header {
 
 .HomePage .content {
   margin-top: 50px; }
+  .HomePage .content .calc-form .field#GasAmount {
+    display: none; }
   .HomePage .content .calc-form .field {
     margin-bottom: 10px; }
   .HomePage .content .calc-form input.checkbox {

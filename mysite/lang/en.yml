@@ -12,4 +12,5 @@ en:
     WithGas: Also want to check gas plan?
     GasAmount: Your monthly gas consumption
     Submit: Check >
+    AddressInvalid: Sorry, your area is not supported yet.
 

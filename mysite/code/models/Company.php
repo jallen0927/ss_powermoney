@@ -13,6 +13,10 @@ class Company extends DataObject {
         'Name_cn' => 'Varchar(50)',
     );
 
+    private static $has_one = array(
+        'Logo' => 'SiteImage'
+    );
+
     private static $has_many = array(
         'PowerPlans' => 'PowerPlan',
         'GasPlans' => 'GasPlan'

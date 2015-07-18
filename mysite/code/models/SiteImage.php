@@ -6,7 +6,7 @@
  * Date: 14/07/15
  * Time: 11:05 PM
  */
-class SiteImage extends DataObject {
+class SiteImage extends Image {
 
     private static $db = array();
 
