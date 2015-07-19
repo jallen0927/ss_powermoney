@@ -16,7 +16,12 @@ class HomePage extends Page {
 class HomePage_Controller extends Page_Controller {
 
     private static $allowed_actions = array(
-        'CalcForm'
+        'CalcForm',
+        'Result'
+    );
+
+    private static $url_handlers = array(
+        'result' => 'Result'
     );
 
     /**
@@ -54,43 +59,35 @@ class HomePage_Controller extends Page_Controller {
      * This is the function for calculate cost of plans based on input data, the cost data will add into original plan objects
      */
     public function Calculate($data, Form $form) {
-        $suburb = $data['Suburb'];
-        $area = $this->Area($suburb);
+        Session::set('checkData', serialize($data));
+        $area = PlanCalculator::getArea($data['Suburb']);
 
         if ($area) {
-            $powerPlans = $this->CalcPower($area->ID);
-            $data = array(
-                'PowerPlans' => $powerPlans
-            );
-
-            return $this->customise($data)->renderWith(array('HomePage_Result', 'Page'));
+            return $this->redirect('home/result');
         }
 
-        $form->addErrorMessage('Address', _t('HOME.AddressInvalid', 'Sorry, your area is not supported yet.'), 'bad');
+        $form->addErrorMessage('Address', _t('Home.AddressInvalid', 'Sorry, your area is not supported yet.'), 'bad');
 
-        $this->redirectBack();
+        return $this->redirectBack();
     }
 
+    public function Result() {
+        $checkData = unserialize(Session::get('checkData'));
+        $withGas = array_key_exists('WithGas', $checkData) ? $checkData['WithGas'] : false;
+        $gasAmount = array_key_exists('GasAmount', $checkData) ? $checkData['GasAmount'] : 0;
+        $calculator = new PlanCalculator($checkData['Suburb'], $checkData['PowerAmount'], $withGas, $gasAmount);
 
-    /**
-     * @param $suburbName
-     * @return bool|int|string
-     * Get the area of given suburb
-     */
-    public function Area($suburbName) {
-        $suburb = Suburb::get_one('Suburb', "Name = '$suburbName'");
+        $result = $calculator->Calculate();
 
-        if ($suburb) {
-            return $suburb->area();
-        }
-
-        return false;
+        return $this->customise($result)->renderWith(array('HomePage_Result', 'Page'));
     }
 
-    public function CalcPower($areaID) {
-        $plans = PowerPlan::get('PowerPlan', "AreaID = '$areaID'");
+    public function WithGas() {
+        $checkData = unserialize(Session::get('checkData'));
+        $withGas = array_key_exists('WithGas', $checkData) ? $checkData['WithGas'] : false;
 
-        return $plans;
+        return $withGas;
     }
+
 
 }

@@ -15,6 +15,15 @@
                 $gasAmountField.prop('required', _this.checked);
             });
         });
+
+    function checkGasField() {
+        $gasAmountField.prop('disabled', !$withGasField.checked);
+        $gasAmountField.prop('required', $withGasField.checked);
+        $gasAmount.css('display', $withGasField.checked ? 'block' : 'none');
+    }
+
+    checkGasField();
+
     /**
      * For google place auto complete in home page
      */

@@ -21,6 +21,7 @@ class PowerPlan extends DataObject {
     );
 
     private static $summary_fields = array(
+        'Company.Name' => 'Company',
         'Name' => 'Name',
         'Area.Name' => 'Area'
     );
@@ -29,4 +30,20 @@ class PowerPlan extends DataObject {
         'Area' => 'Area',
         'Company' => 'Company'
     );
+
+    public function Name() {
+        if (i18n::get_locale() === 'zh_CN') {
+            return $this->Name_cn;
+        }
+
+        return $this->Name;
+    }
+
+    public function Special() {
+        if (i18n::get_locale() === 'zh_CN') {
+            return $this->Special_cn;
+        }
+
+        return $this->Special;
+    }
 }

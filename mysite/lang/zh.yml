@@ -14,3 +14,11 @@ zh:
     GasAmount: 您的每月平均天然气用量
     Submit: 查看价格 >
     AddressInvalid: 对不起,暂时不支持您的地区.
+    CompanyName: 公司名称
+    PlanName: 套餐名称
+    DailyFixedCharge: 每日定额收费
+    VariableRate: 费率
+    GST: GST
+    PPD: 按期付款折扣
+    EstimatePerMonth: 预计月费用
+    SpecialInfo: 优惠信息

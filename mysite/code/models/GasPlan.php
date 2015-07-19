@@ -20,4 +20,17 @@ class GasPlan extends DataObject {
     private static $has_one = array(
         'Company' => 'Company'
     );
+
+    private static $summary_fields = array(
+        'Company.Name' => 'Company',
+        'Name' => 'Name'
+    );
+
+    public function Name() {
+        if (i18n::get_locale() === 'zh_CN') {
+            return $this->Name_cn;
+        }
+
+        return $this->Name;
+    }
 }

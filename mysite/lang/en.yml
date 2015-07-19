@@ -13,4 +13,12 @@ en:
     GasAmount: Your monthly gas consumption
     Submit: Check >
     AddressInvalid: Sorry, your area is not supported yet.
+    CompanyName: Company Name
+    PlanName: Plan Name
+    DailyFixedCharge: Daily Fixed Charge
+    VariableRate: Variable Rate
+    GST: GST
+    PPD: Prompt Payment Discount
+    EstimatePerMonth: Estimate Per Month
+    SpecialInfo: Special Info
 
