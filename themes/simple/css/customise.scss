@@ -43,12 +43,21 @@ body {
   overflow: hidden;
 }
 
+.good {
+  color: green;
+}
+
+.bad {
+  color: red;
+}
+
 .block {
   background-color: #FEFEFE;
   min-height: 300px;
   border-top: 5px solid $secondary-color;
   border-bottom: 5px solid $secondary-color;
   padding: 20px 30px;
+  margin-bottom: 20px;
 }
 
 header {
@@ -200,6 +209,23 @@ header {
 .AboutPage {
   .img-container {
     margin-bottom: 30px;
+  }
+}
+
+.ContactPage {
+  .title {
+    font-size: 22px;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  .field {
+    margin-bottom: 20px;
+  }
+  .middleColumn {
+    input, textarea {
+      width: 100%;
+    }
   }
 }
 

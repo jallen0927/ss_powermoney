@@ -32,12 +32,19 @@ body {
   text-overflow: ellipsis;
   overflow: hidden; }
 
+.good {
+  color: green; }
+
+.bad {
+  color: red; }
+
 .block {
   background-color: #FEFEFE;
   min-height: 300px;
   border-top: 5px solid #FFC110;
   border-bottom: 5px solid #FFC110;
-  padding: 20px 30px; }
+  padding: 20px 30px;
+  margin-bottom: 20px; }
 
 header {
   min-height: 120px; }
@@ -123,6 +130,16 @@ header {
 
 .AboutPage .img-container {
   margin-bottom: 30px; }
+
+.ContactPage .title {
+  font-size: 22px;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 20px;
+  padding-bottom: 10px; }
+.ContactPage .field {
+  margin-bottom: 20px; }
+.ContactPage .middleColumn input, .ContactPage .middleColumn textarea {
+  width: 100%; }
 
 footer {
   color: #ffffff; }

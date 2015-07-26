@@ -21,4 +21,12 @@ en:
     PPD: Prompt Payment Discount
     EstimatePerMonth: Estimate Per Month
     SpecialInfo: Special Info
+  Contact:
+    Title: Contact Us
+    Name: Name
+    Email: Email
+    Phone: Phone Number
+    Subject: Subject
+    Message: Message
+    Submit: Submit
 

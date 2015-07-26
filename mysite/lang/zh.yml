@@ -22,3 +22,11 @@ zh:
     PPD: 按期付款折扣
     EstimatePerMonth: 预计月费用
     SpecialInfo: 优惠信息
+  Contact:
+    Title: 联系我们
+    Name: 姓名
+    Email: 电子邮件
+    Phone: 电话号码
+    Subject: 主题
+    Message: 内容
+    Submit: 提交
