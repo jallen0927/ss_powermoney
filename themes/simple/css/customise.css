@@ -121,6 +121,9 @@ header {
   .ProductsPage .gallery .fancybox:first-of-type img, .ProductsPage .gallery .fancybox:last-of-type img {
     width: 100%; }
 
+.AboutPage .img-container {
+  margin-bottom: 30px; }
+
 footer {
   color: #ffffff; }
   footer .social {
