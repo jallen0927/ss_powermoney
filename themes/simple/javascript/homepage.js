@@ -1,5 +1,5 @@
 /**
- * Created by xlin on 15/07/15.
+ * Created by xlin on 26/07/15.
  */
 ;(function($){
 
@@ -7,14 +7,14 @@
         $gasAmount = $('#GasAmount'),
         $gasAmountField = $('#Form_CalcForm_GasAmount');
 
-        $withGasField.change(function(){
-            var _this = this;
+    $withGasField.change(function(){
+        var _this = this;
 
-            $gasAmount.toggle(500, function(){
-                $gasAmountField.prop('disabled', !_this.checked);
-                $gasAmountField.prop('required', _this.checked);
-            });
+        $gasAmount.toggle(500, function(){
+            $gasAmountField.prop('disabled', !_this.checked);
+            $gasAmountField.prop('required', _this.checked);
         });
+    });
 
     /**
      * Handle the show/hide action for GasAmount field

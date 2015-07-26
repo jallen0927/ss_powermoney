@@ -179,6 +179,24 @@ header {
   }
 }
 
+.ProductsPage {
+
+  .gallery {
+    .fancybox {
+      display: none;
+    }
+
+    .fancybox:first-of-type, .fancybox:last-of-type {
+      display: block;
+      text-decoration: none;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 footer {
   color: #ffffff;
 

@@ -105,5 +105,9 @@ class HomePage_Controller extends Page_Controller {
         return $withGas;
     }
 
+    public function init() {
+        parent::init();
 
+        Requirements::javascript(JS_DIR . '/homepage.js');
+    }
 }

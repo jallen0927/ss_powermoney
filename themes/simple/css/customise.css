@@ -113,6 +113,14 @@ header {
   border-bottom: 1px solid #CCCCCC;
   padding-bottom: 10px; }
 
+.ProductsPage .gallery .fancybox {
+  display: none; }
+.ProductsPage .gallery .fancybox:first-of-type, .ProductsPage .gallery .fancybox:last-of-type {
+  display: block;
+  text-decoration: none; }
+  .ProductsPage .gallery .fancybox:first-of-type img, .ProductsPage .gallery .fancybox:last-of-type img {
+    width: 100%; }
+
 footer {
   color: #ffffff; }
   footer .social {
