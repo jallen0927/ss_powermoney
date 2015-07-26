@@ -11,6 +11,22 @@ class HomePage extends Page {
     private static $db = array();
 
     private static $has_many = array();
+
+    public function getArticleSummaries() {
+        $articles = ArticlePage::get()->sort('Date', 'Desc')->toArray();
+
+        $summaries = new ArrayList();
+        for ($i = 0; $i < 4; $i ++) {
+            if (array_key_exists($i, $articles)) {
+                $article = $articles[$i];
+
+                $summaries->push($article);
+            }
+
+        }
+
+        return $summaries;
+    }
 }
 
 class HomePage_Controller extends Page_Controller {

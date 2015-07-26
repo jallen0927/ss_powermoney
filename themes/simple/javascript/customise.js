@@ -16,6 +16,9 @@
             });
         });
 
+    /**
+     * Handle the show/hide action for GasAmount field
+     */
     function checkGasField() {
         $gasAmountField.prop('disabled', !$withGasField.checked);
         $gasAmountField.prop('required', $withGasField.checked);

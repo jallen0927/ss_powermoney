@@ -27,6 +27,11 @@ body {
 .main {
   min-height: 500px; }
 
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
 .block {
   background-color: #FEFEFE;
   min-height: 300px;
@@ -74,6 +79,39 @@ header {
       background-color: #FFC110;
       border: 1px solid #2C78AF;
       border-radius: 5px; }
+  .HomePage .content .news {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 15px; }
+    .HomePage .content .news .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 5px 30px;
+      height: 36px;
+      line-height: 26px;
+      background-color: #F1F1F1;
+      border-bottom: 1px solid #C7C7C7;
+      color: #FFC110;
+      font-weight: bold;
+      font-size: 18px; }
+    .HomePage .content .news .summaries {
+      padding: 20px 0 0 0; }
+      .HomePage .content .news .summaries li {
+        list-style: none;
+        border-bottom: 1px solid #CCCCCC; }
+        .HomePage .content .news .summaries li h4 {
+          font-weight: bold;
+          font-size: 16px; }
+
+.BlogsPage .articles li {
+  list-style: none;
+  border-bottom: 1px solid #CCCCCC; }
+
+.ArticlePage h3 {
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 10px; }
 
 footer {
   color: #ffffff; }
@@ -83,7 +121,7 @@ footer {
       list-style: none;
       display: block;
       float: left;
-      margin: 0px 20px; }
+      margin: 0 20px; }
       footer .social ul li a {
         text-decoration: none;
         color: #ffffff; }

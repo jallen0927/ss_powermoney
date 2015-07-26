@@ -5,7 +5,7 @@
             <ul class="col-xs-4">
                 <% loop $Languages %>
                     <li>
-                        <a href="{$Top.URLSegment}/lang/{$code}">$title</a>
+                        <a href="{$Top.Link}/lang/{$code}">$title</a>
                     </li>
                 <% end_loop %>
             </ul>
