@@ -2,6 +2,7 @@
   "name": "powermoney",
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "fancybox": "~2.1.5"
+    "fancybox": "~2.1.5",
+    "font-awesome": "~4.3.0"
   }
 }

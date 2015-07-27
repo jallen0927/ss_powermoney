@@ -232,9 +232,49 @@ header {
 footer {
   color: #ffffff;
 
+
   .social {
     background-color: #2C78AF;
-    ul {
+    padding: 10px;
+
+    .links {
+
+      .follow-text {
+        line-height: 40px;
+        font-size: 16px;
+        padding-left: 0;
+        padding: 0;
+      }
+
+      ul {
+        margin-bottom: 0;
+
+        li {
+          list-style: none;
+          display: block;
+          float: left;
+          margin: 0 5px;
+
+          a {
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            color: $primary-color;
+            width: 40px;
+            height: 40px;
+            background-color: #F5F5F2;
+            border-radius: 5px;
+            font-size: 30px;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+
+    ul.languages {
+      line-height: 40px;
+      margin-bottom: 0;
+
       li {
         list-style: none;
         display: block;

@@ -11,7 +11,7 @@ class ArticlePage extends Page {
     private static $db = array(
         'Date' => 'Date',
         'Title_cn' => 'Text',
-        'Content_cn' => 'HTMLText',
+        'Content_cn' => 'HTMLText'
     );
 
     private static $has_one = array();

@@ -69,6 +69,7 @@ class Page_Controller extends ContentController {
         Requirements::css(BOWER_PATH . '/bootstrap/dist/css/bootstrap.min.css');
         Requirements::css('http://fonts.googleapis.com/css?family=Raleway');
         Requirements::css(BOWER_PATH . '/fancybox/source/jquery.fancybox.css');
+        Requirements::css(BOWER_PATH . '/font-awesome/css/font-awesome.min.css');
 		Requirements::css(CSS_DIR . '/customise.css');
 
         Requirements::javascript(BOWER_PATH . '/jquery/dist/jquery.min.js');
