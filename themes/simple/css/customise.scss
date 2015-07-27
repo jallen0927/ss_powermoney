@@ -227,6 +227,14 @@ header {
       width: 100%;
     }
   }
+  .contact-info {
+    background-color: #E3E3E3;
+    border-radius: 5px;
+    padding: 15px;
+    line-height: 40px;
+    box-shadow: 5px 5px 3px #888888;
+    margin-top: 20px;
+  }
 }
 
 footer {
@@ -288,11 +296,15 @@ footer {
     }
   }
 
-  .information {
-    background-color: #747374;
-  }
-
   .copyright {
-    background-color: #2D2D2D;
+    background-color: #747374;
+    height: 50px;
+    line-height: 50px;
+    color: #ffffff;
+    a {
+      color: #ffffff !important;
+      text-decoration: none;
+    }
+
   }
 }

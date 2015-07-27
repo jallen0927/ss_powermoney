@@ -8,9 +8,25 @@
  */
 class ContactPage extends Page {
 
-    private static $db = array();
+    private static $db = array(
+        'Phone' => 'Varchar(200)',
+        'Fax' => 'Varchar(200)',
+        'Address' => 'Varchar(200)'
+    );
 
     private static $has_many = array();
+
+    public function getCMSFields() {
+        $fields = parent::getCMSFields();
+        $fields->removeFieldsFromTab('Root.Main', array('Title', 'Content', 'URLSegment', 'MenuTitle'));
+        $fields->addFieldsToTab('Root.Main', array(
+            TextField::create('Phone', 'Phone'),
+            TextField::create('Fax', 'Fax'),
+            TextField::create('Address', 'Address')
+        ), 'Metadata');
+
+        return $fields;
+    }
 
 }
 

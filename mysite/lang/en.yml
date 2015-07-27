@@ -5,6 +5,7 @@ en:
       BlogsPage: News
       ProductsPage: Products
       ContactPage: Contact Us
+    CreatedBy: Created by
   Home:
     NewsTitle: LATEST NEWS
     Address: Please input your address
@@ -26,8 +27,12 @@ en:
     Title: Contact Us
     Name: Name
     Email: Email
-    Phone: Phone Number
+    Phone: Phone
     Subject: Subject
     Message: Message
     Submit: Submit
+    Fax: Fax
+    Address: Address
+  Products:
+    ViewGallery: View Gallery
 

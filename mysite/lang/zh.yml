@@ -5,7 +5,7 @@ zh:
       BlogsPage: 信息站
       ProductsPage: 硬件产品
       ContactPage: 联系我们
-
+    CreatedBy: 团队开发
   Home:
     NewsTitle: 最新消息
     Address: 这里输入您的地址
@@ -27,7 +27,11 @@ zh:
     Title: 联系我们
     Name: 姓名
     Email: 电子邮件
-    Phone: 电话号码
+    Phone: 电话
     Subject: 主题
     Message: 内容
     Submit: 提交
+    Fax: 传真
+    Address: 地址
+  Products:
+    ViewGallery: 查看图册

@@ -23,14 +23,18 @@
             </ul>
         </div>
     </div>
+        <!--
     <div class="information">
         <div class="container">
             Here is the social information
         </div>
     </div>
+        -->
     <div class="copyright">
         <div class="container">
-            Here is the copyright
+            <div class="col-sm-12 text-center">
+                <%t Common.CreatedBy %> <a target="_blank" href="http://3awebsites.co.nz/">3A Web Solution</a>
+            </div>
         </div>
     </div>
 </footer>
