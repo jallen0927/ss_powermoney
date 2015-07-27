@@ -35,3 +35,27 @@ zh:
     Address: 地址
   Products:
     ViewGallery: 查看图册
+  Signup:
+    Title: Title
+    FirstName: First Name
+    LastName: Last Name
+    Phone: Phone
+    Email: Email
+    License: License No.
+    Version: License Version
+    DateOfBirth: Date Of Birth
+    Property: Property
+    PropertyTip: Your property address
+    Primary: Is this your primary address?
+    Yes: Yes
+    No: No
+    Services: How many people live in your household?
+    More: or more
+    Situation: What is your situation?
+    Moving: I'm moving or need a new connection
+    Switch: I just want to switch energy providers
+    Prevent: Is there anything that could prevent a meter reader accessing your meter, such as any dogs on the property?
+    Medical: Is anyone at this property reliant on mains electricity for critical medical support?
+    Threat: Does disconnection of electricity present a clear threat to the health or wellbeing of anyone at this property for reasons of age, health or disability?
+    BillingSame: Is your billing address the same as your supply address?
+    Billing: Billing address

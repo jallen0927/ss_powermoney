@@ -6,18 +6,17 @@
  * Date: 14/07/15
  * Time: 11:05 PM
  */
-class SignUp extends DataObject {
+class Signup extends DataObject {
 
     private static $db = array(
         'Title' => "Enum(array('Mr', 'Miss', 'Mrs', 'Ms', 'Dr', 'Rev'))",
-        'Title_cn' => "Enum(array('先生', '小姐', '女士'))",
         'FirstName' => 'Varchar(50)',
         'LastName' => 'Varchar(50)',
         'Phone' => 'Varchar(50)',
         'Email' => 'Varchar(50)',
         'License' => 'Varchar(50)',
         'Version' => 'Varchar(50)',
-        'DoB' => 'Date',
+        'DateOfBirth' => 'Date',
         'Address' => 'Text',
         'Primary' => 'Boolean',
         'Services' => 'Varchar(50)',
@@ -27,6 +26,7 @@ class SignUp extends DataObject {
         'Medical' => 'Boolean',
         'Threat' => 'Boolean',
         'BillingSame' => 'Boolean',
+        'Billing' => 'Text',
         'Created' => 'SS_Datetime'
     );
 

@@ -15,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% loop $PowerPlans %>
+                <% loop $PowerPlans.Sort(cost, ASC) %>
                 <tr>
                     <td>$Company.Name</td>
                     <td>$Name</td>
@@ -23,9 +23,9 @@
                     <td>$Rate</td>
                     <td>$GST.Nice</td>
                     <td>$PPD.Nice</td>
-                    <td>$cost</td>
+                    <td>$cost.Nice</td>
                     <td>$Special</td>
-                    <td><button>Sign up</button></td>
+                    <td><a href="signup?power={$ID}">Sign up</a></td>
                 </tr>
                 <% end_loop %>
             </tbody>
@@ -48,6 +48,7 @@
                 <tr>
                     <td>$Company.Name</td>
                     <td>$Name</td>
+                    <td><a href="signup?gas={$ID}">Sign up</a></td>
                 </tr>
                 <% end_loop %>
             </tbody>

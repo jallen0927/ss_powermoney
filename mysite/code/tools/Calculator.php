@@ -29,23 +29,31 @@ class PlanCalculator {
 
     public function CalPower(PowerPlan &$plan) {
         $daily = $plan->DailyCharge;
-        $rate = $this->withGas ? $plan->RateWithGas : $plan->rate;
-        $ppd = $plan->ppd;
+        $rate = $this->withGas ? $plan->RateWithGas : $plan->Rate;
+        $ppd = $plan->PPD;
         $amount = $this->powerAmount;
 
         $plan->rate = $rate;
-        $plan->cost = ($daily * 30 + $rate * $amount) * 1.15 * (1 - $ppd);
+        $value = ($daily * 30 + $rate * $amount) * 1.15 * (1 - $ppd);
+
+        $cost = new Currency();
+        $cost->setValue($value);
+        $plan->cost = $cost;
 
         return $plan;
     }
 
     public function CalGas(GasPlan &$plan) {
         $daily = $plan->DailyCharge;
-        $rate = $plan->rate;
-        $ppd = $plan->ppd;
+        $rate = $plan->Rate;
+        $ppd = $plan->PPD;
         $amount = $this->gasAmount;
 
-        $plan->cost = ($daily * 30 + $rate * $amount) * 1.15 * (1 - $ppd);
+        $value = ($daily * 30 + $rate * $amount) * 1.15 * (1 - $ppd);
+
+        $cost = new Currency();
+        $cost->setValue($value);
+        $plan->cost = $cost;
 
         return $plan;
     }
