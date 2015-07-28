@@ -198,6 +198,15 @@ header {
       float: left; }
 .SignupPage #Form_SignupForm .Actions {
   text-align: center; }
+.SignupPage .action {
+  background-color: #2C78AF;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none; }
+.SignupPage .bad, .SignupPage .good {
+  margin-bottom: 30px; }
 
 footer {
   color: #ffffff; }

@@ -326,6 +326,19 @@ header {
       text-align: center;
     }
   }
+
+  .action {
+    background-color: $primary-color;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .bad, .good {
+    margin-bottom: 30px;
+  }
 }
 
 footer {

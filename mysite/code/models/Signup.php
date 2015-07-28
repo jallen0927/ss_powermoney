@@ -25,7 +25,7 @@ class Signup extends DataObject {
         'Prevent' => 'Boolean',
         'Medical' => 'Boolean',
         'Threat' => 'Boolean',
-        'BillingSame' => 'Boolean',
+//        'BillingSame' => 'Boolean',
         'Billing' => 'Text',
         'Created' => 'SS_Datetime'
     );

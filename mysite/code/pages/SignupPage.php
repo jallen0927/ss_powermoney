@@ -12,6 +12,21 @@ class SignupPage extends Page {
 
 class SignupPage_Controller extends Page_Controller {
 
+    private static $allowed_actions = array(
+        'SignupForm',
+        'Submit',
+        'Result'
+    );
+
+    private static $url_handlers = array(
+        'result' => 'Result'
+    );
+
+    /**
+     * @param SS_HTTPRequest $request
+     * @return $this
+     * Handle signup type
+     */
     public function index(SS_HTTPRequest $request) {
         $vars = $request->getVars();
         if (array_key_exists('power', $vars) && $vars['power']) {
@@ -29,6 +44,10 @@ class SignupPage_Controller extends Page_Controller {
         return $this;
     }
 
+    /**
+     * @return Form
+     * Signup Form
+     */
     public function SignupForm() {
         $fields = new FieldList();
 
@@ -79,10 +98,10 @@ class SignupPage_Controller extends Page_Controller {
 
         $billingFields = new CompositeField(
             LiteralField::create('Billing', '<h4 class="title">Billing Details</h4>'),
-            OptionsetField::create('BillingSame', _t('Signup.BillingSame', 'Is your billing address the same as your supply address?'), array(
-                'true' => _t('Signup.Yes', 'Yes'),
-                'false' => _t('Signup.No', 'No')
-            )),
+//            OptionsetField::create('BillingSame', _t('Signup.BillingSame', 'Is your billing address the same as your supply address?'), array(
+//                'true' => _t('Signup.Yes', 'Yes'),
+//                'false' => _t('Signup.No', 'No')
+//            )),
             TextField::create('Billing', _t('Signup.Billing', 'Billing address'))
         );
 
@@ -115,5 +134,51 @@ class SignupPage_Controller extends Page_Controller {
         $form = new Form($this, __FUNCTION__, $fields, $actions, $required);
 
         return $form;
+    }
+
+    /**
+     * @param $data
+     * @param $form
+     * @throws ValidationException
+     * @throws null
+     * Handle submit signup
+     */
+    public function Submit($data, $form) {
+        $Signup = new Signup();
+        $Signup->update($data);
+        $data = Session::get('Signup');
+        if ($data['type'] === 'PowerPlan') {
+            $Signup->PowerPlanID = $data['id'];
+        } elseif ($data['type'] === 'GasPlan') {
+            $Signup->GasPlanID = $data['id'];
+        }
+
+        $SignupID = $Signup->write();
+
+        if ($SignupID) {
+            $this->redirect('signup/result?result=success');
+        } else {
+            $this->redirect('signup/result?result=fail');
+        }
+
+    }
+
+    /**
+     * @param SS_HTTPRequest $request
+     * Show submit result
+     */
+    public function Result(SS_HTTPRequest $request) {
+
+        $result = $request->getVar('result');
+
+        if ($result === 'success') {
+            $data['message'] = _t('Signup.Success', 'Your submit is successful, we will contact you soon. Thank you.');
+            $data['type'] = 'good';
+        } else {
+            $data['message'] = _t('Signup.Fail', 'Sorry, there is something wrong during submitting, please try again.');
+            $data['type'] = 'bad';
+        }
+
+        return $this->customise($data)->renderWith(array('SignupPage_Result', 'Page'));
     }
 }
