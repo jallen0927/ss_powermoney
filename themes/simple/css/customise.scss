@@ -237,6 +237,97 @@ header {
   }
 }
 
+.SignupPage {
+
+  .title {
+    background-color: #F1F1F1;
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  #Form_SignupForm {
+    .CompositeField {
+      border: 3px solid $secondary-color;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 5px 5px 3px #333;
+
+      .title {
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+    }
+
+
+    .field {
+      overflow: auto;
+      background-color: #F1F1F1;
+      margin-bottom: 10px;
+      padding: 10px;
+
+      .left {
+        padding: 0 20px;
+      }
+
+      .middleColumn {
+        padding: 0 20px;
+      }
+
+    }
+
+    .field:not(.optionset) {
+      .left {
+        float: left;
+        width: 30%;
+      }
+
+      .middleColumn{
+        float: left;
+        width: 70%;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    .field:not(#Version):not(#License) {
+      .left:after {
+        content: '*';
+        color: red;
+        font-size: 24px;
+        line-height: 20px;
+        display: inline;
+        position: relative;
+        top: 8px;
+      }
+    }
+
+    .optionset {
+      overflow: auto;
+
+      li {
+        list-style: none;
+        overflow: auto;
+
+        input {
+          float: left;
+          width: 20px;
+          margin-right: 10px;
+        }
+
+        label {
+          float: left;
+        }
+      }
+    }
+
+    .Actions {
+      text-align: center;
+    }
+  }
+}
+
 footer {
   color: #ffffff;
 
