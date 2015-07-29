@@ -49,7 +49,8 @@ en:
     Primary: Is this your primary address?
     Yes: Yes
     No: No
-    Services: How many people live in your household?
+    Services: What energy services do you require?
+    People: How many people live in your household?
     More: or more
     Situation: What is your situation?
     Moving: I'm moving or need a new connection

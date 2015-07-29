@@ -71,11 +71,15 @@ class SignupPage_Controller extends Page_Controller {
                 'true' => _t('Signup.Yes', 'Yes'),
                 'false' => _t('Signup.No', 'No')
             )),
-            OptionsetField::create('Services', _t('Signup.Services', 'How many people live in your household?'), array(
+            OptionsetField::create('Services', _t('Signup.Services', 'What energy services do you require?'), array(
+                'Electricity' => 'Electricity',
+                'Gas' => 'Natural Gas',
+                'Electricity and Gas' => 'Electricity and Gas'
+            )),
+            OptionsetField::create('People', _t('Signup.People', 'How many people live in your household?'), array(
                 '1' => '1',
                 '2' => '2',
                 '3' => '3',
-                '4' => '4',
                 '4 or more' => '4 ' . _t('Signup.More', 'or more')
             )),
             OptionsetField::create('Situation', _t('Signup.Situation', 'What is your situation?'), array(
@@ -133,6 +137,10 @@ class SignupPage_Controller extends Page_Controller {
 
         $form = new Form($this, __FUNCTION__, $fields, $actions, $required);
 
+        $data = Session::get('SignupData');
+
+        $form->loadDataFrom($data);
+
         return $form;
     }
 
@@ -144,15 +152,29 @@ class SignupPage_Controller extends Page_Controller {
      * Handle submit signup
      */
     public function Submit($data, $form) {
+
+        foreach ($data as $k => &$v) {
+            if ($v === 'false') {
+                $data[$k] = false;
+            } elseif ($v === 'true') {
+                $data[$k] = true;
+            }
+        }
+        Session::set('SignupData', $data);
+
         $Signup = new Signup();
         $Signup->update($data);
-        $data = Session::get('Signup');
-        if ($data['type'] === 'PowerPlan') {
-            $Signup->PowerPlanID = $data['id'];
-        } elseif ($data['type'] === 'GasPlan') {
-            $Signup->GasPlanID = $data['id'];
+        $type = Session::get('Signup');
+
+        if ($type['type'] === 'PowerPlan') {
+            $plan = PowerPlan::get_by_id('PowerPlan', $type['id']);
+        } elseif ($type['type'] === 'GasPlan') {
+            $plan = GasPlan::get_by_id('GasPlan', $type['id']);
         }
 
+        $Signup->Plan = $plan->Name;
+        $Signup->Company = $plan->Company()->Name;
+        
         $SignupID = $Signup->write();
 
         if ($SignupID) {
@@ -164,8 +186,9 @@ class SignupPage_Controller extends Page_Controller {
     }
 
     /**
-     * @param SS_HTTPRequest $request
      * Show submit result
+     * @param SS_HTTPRequest $request
+     * @return HTMLText
      */
     public function Result(SS_HTTPRequest $request) {
 

@@ -27,11 +27,9 @@ class Signup extends DataObject {
         'Threat' => 'Boolean',
 //        'BillingSame' => 'Boolean',
         'Billing' => 'Text',
-        'Created' => 'SS_Datetime'
+        'Created' => 'SS_Datetime',
+        'Company' => 'Varchar(50)',
+        'Plan' => 'Varchar(50)'
     );
 
-    private static $has_one = array(
-        'PowerPlan' => 'PowerPlan',
-        'GasPlan' => 'GasPlan'
-    );
 }
