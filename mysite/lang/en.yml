@@ -14,6 +14,8 @@ en:
     GasAmount: Your monthly gas consumption
     Submit: Check >
     AddressInvalid: Sorry, your area is not supported yet.
+    ResultPower: Your power estimation
+    ResultGas: Your Gas estimation
     CompanyName: Company Name
     PlanName: Plan Name
     DailyFixedCharge: Daily Fixed Charge

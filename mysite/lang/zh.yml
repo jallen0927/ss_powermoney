@@ -14,6 +14,8 @@ zh:
     GasAmount: 您的每月平均天然气用量
     Submit: 查看价格 >
     AddressInvalid: 对不起,暂时不支持您的地区.
+    ResultPower: 您的电费预计
+    ResultGas: 您的天然气费用预计
     CompanyName: 公司名称
     PlanName: 套餐名称
     DailyFixedCharge: 每日定额收费

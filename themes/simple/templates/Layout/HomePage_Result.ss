@@ -1,5 +1,6 @@
 <div class="row content">
     <div class="block col-xs-12 col-sm-12 col-lg-offset-1 col-lg-10">
+        <h3 class="col-sm-12 title"><%t Home.ResultPower %></h3>
         <table class="table table-responsive">
             <thead>
                 <tr>
@@ -31,6 +32,7 @@
             </tbody>
         </table>
         <% if $withGas %>
+        <h3 class="col-sm-12 title"><%t Home.ResultGas %></h3>
         <table class="table table-responsive">
             <thead>
             <tr>
@@ -44,10 +46,15 @@
             </tr>
             </thead>
             <tbody>
-                <% loop $PowerPlans %>
+                <% loop $GasPlans.Sort(cost, ASC) %>
                 <tr>
                     <td>$Company.Name</td>
                     <td>$Name</td>
+                    <td>$DailyCharge</td>
+                    <td>$Rate</td>
+                    <td>$GST.Nice</td>
+                    <td>$PPD.Nice</td>
+                    <td>$cost.Nice</td>
                     <td><a href="signup?gas={$ID}">Sign up</a></td>
                 </tr>
                 <% end_loop %>

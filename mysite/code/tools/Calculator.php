@@ -49,7 +49,7 @@ class PlanCalculator {
         $ppd = $plan->PPD;
         $amount = $this->gasAmount;
 
-        $value = ($daily * 30 + $rate * $amount) * 1.15 * (1 - $ppd);
+        $value = ($daily * 30 / 100 + $rate * $amount) * 1.15 * (1 - $ppd);
 
         $cost = new Currency();
         $cost->setValue($value);

@@ -159,6 +159,10 @@ class SignupPage_Controller extends Page_Controller {
             } elseif ($v === 'true') {
                 $data[$k] = true;
             }
+
+            if ($k === 'Title') {
+                $v = $v + 1;
+            }
         }
         Session::set('SignupData', $data);
 
@@ -174,10 +178,12 @@ class SignupPage_Controller extends Page_Controller {
 
         $Signup->Plan = $plan->Name;
         $Signup->Company = $plan->Company()->Name;
-        
+
         $SignupID = $Signup->write();
 
         if ($SignupID) {
+            Session::clear('SignupData');
+            Session::clear('Signup');
             $this->redirect('signup/result?result=success');
         } else {
             $this->redirect('signup/result?result=fail');
