@@ -139,8 +139,10 @@ class SignupPage_Controller extends Page_Controller {
 
         $data = Session::get('SignupData');
 
-        $form->loadDataFrom($data);
-
+        if ($data) {
+            $form->loadDataFrom($data);
+        }
+        
         return $form;
     }
 
